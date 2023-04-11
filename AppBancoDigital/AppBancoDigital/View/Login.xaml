@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancoDigital.View.Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnDefinitions="*, *" RowDefinitions="*,*,*,*">
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Banco Etec" FontSize="Large" TextColor="Black"/>
+            
+
+                <Label Text="CPF:" Grid.Row="1" Grid.Column="0"/>
+                <Entry Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Senha:" Grid.Row="2" Grid.Column="0"/>
+                <Entry Grid.Row="2" Grid.Column="1"/>
+
+                <Button Text="Login" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>   
+                
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
