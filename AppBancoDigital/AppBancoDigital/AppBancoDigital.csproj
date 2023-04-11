@@ -16,8 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="DataService\" />
     <Folder Include="View\" />
   </ItemGroup>
 </Project>
