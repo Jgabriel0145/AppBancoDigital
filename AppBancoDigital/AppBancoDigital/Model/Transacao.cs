@@ -6,5 +6,6 @@ namespace AppBancoDigital.Model
 {
     public class Transacao
     {
+
     }
 }

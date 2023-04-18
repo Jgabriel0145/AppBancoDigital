@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AppBancoDigital.Model
+namespace AppBancoDigital.Service
 {
-    public class ChavePix
+    public class DataServiceTransacao
     {
 
     }
