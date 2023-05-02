@@ -16,5 +16,12 @@ namespace AppBancoDigital.View.Conta
         {
             InitializeComponent();
         }
+
+        private void btnCriarConta_Clicked(object sender, EventArgs e)
+        {
+            act_carregando.IsVisible = true;
+            act_carregando.IsRunning = true;
+
+        }
     }
 }

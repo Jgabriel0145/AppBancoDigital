@@ -4,8 +4,7 @@ using System.Text;
 
 namespace AppBancoDigital.Service
 {
-    public class DataServiceChavePix : DataService
+    public class DataServiceLogin : DataService
     {
-
     }
 }

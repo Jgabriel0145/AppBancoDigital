@@ -4,8 +4,23 @@
              x:Class="AppBancoDigital.View.Conta.ContaCadastro">
     <ContentPage.Content>
         <StackLayout>
-            <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*, *">
-                
+            <ActivityIndicator x:Name="act_carregando" Color="Blue" IsVisible="false"/>
+            <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *">
+                <Label Text="Nome:" Grid.Column="0" Grid.Row="0"/>
+                <Entry x:Name="txt_nome" Grid.Column="1" Grid.Row="0"/>
+
+                <Label Text="CPF:" Grid.Column="0" Grid.Row="1"/>
+                <Entry x:Name="txt_cpf" Grid.Column="1" Grid.Row="1" Placeholder="xxx.xxx.xxx-xx"/>
+
+                <Label Text="Data de Nascimento:" Grid.Column="0" Grid.Row="2"/>
+                <DatePicker x:Name="dtpck_data_nasc" Grid.Column="1" Grid.Row="2" Format="dd/MM/yyyy"/>
+
+                <Label Text="Senha:" Grid.Column="0" Grid.Row="3"/>
+                <Entry x:Name="txt_senha" IsPassword="True" Grid.Column="1" Grid.Row="3"/>
+
+                <Button Text="Criar Conta" x:Name="btnCriarConta" Clicked="btnCriarConta_Clicked"
+                        Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"/>
+
             </Grid>
         </StackLayout>
     </ContentPage.Content>

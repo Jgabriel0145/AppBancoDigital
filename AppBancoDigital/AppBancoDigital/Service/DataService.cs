@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
-namespace AppBancoDigital.DataService
+namespace AppBancoDigital.Service
 {
-    public class DataService
+    public abstract class DataService
     {
         private static readonly string servidor = "https://10.0.2.2:8000";
 

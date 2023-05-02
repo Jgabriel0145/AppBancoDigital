@@ -4,9 +4,9 @@
              x:Class="AppBancoDigital.View.Correntista.CorrentistaCadastro">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+                
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
