@@ -75,5 +75,30 @@ namespace AppBancoDigital.Service
 
             return json_response;
         }
+
+        protected static async Task<string> PostDataToService(string json_obj, string rota)
+        {
+            string json_response;
+            string uri = servidor + rota;
+
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                throw new Exception("Por favor, conecte-se à internet.");
+            }
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.PostAsync(uri, new StringContent(json_obj, Encoding.UTF8, "application/json"));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    json_response = response.Content.ReadAsStringAsync().Result;
+                }
+                else
+                    throw new Exception(DecodeServerError(response.StatusCode));
+            }
+
+            return json_response;
+        }
     }
 }
