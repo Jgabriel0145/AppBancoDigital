@@ -17,10 +17,24 @@ namespace AppBancoDigital.View.Conta
             InitializeComponent();
         }
 
-        private void btnCriarConta_Clicked(object sender, EventArgs e)
+        private async void btnCriarConta_Clicked(object sender, EventArgs e)
         {
             act_carregando.IsVisible = true;
             act_carregando.IsRunning = true;
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", ex.Message, "OK");
+            }
+            finally
+            {
+                act_carregando.IsRunning = false;
+                act_carregando.IsVisible = false;
+            }
 
         }
     }
