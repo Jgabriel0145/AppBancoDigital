@@ -4,5 +4,11 @@
              x:Class="AppBancoDigital.App">
     <Application.Resources>
 
+        <Style TargetType="Label" x:Key="lbl_Login_Cadastro">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+            <Setter Property="FontSize" Value="Medium"/>
+        </Style>
+
     </Application.Resources>
 </Application>

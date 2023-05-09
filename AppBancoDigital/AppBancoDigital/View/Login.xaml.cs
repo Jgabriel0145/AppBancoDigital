@@ -15,6 +15,8 @@ namespace AppBancoDigital.View
         public Login()
         {
             InitializeComponent();
+
+            img_logo.Source = ImageSource.FromResource("AppBancoDigital.Img.logo.png");
         }
     }
 }

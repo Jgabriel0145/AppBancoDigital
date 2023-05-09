@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Img\logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 

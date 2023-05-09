@@ -1,33 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.Login">
+              xmlns:local="clr-namespace:AppBancoDigital;assembly=AppBancoDigital"
+             x:Class="AppBancoDigital.View.Login" BackgroundColor="#FC7C04">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#FC7C04">
+        <StackLayout BackgroundColor="#FC7C04" VerticalOptions="Center">
 
-            <Frame CornerRadius="10" Margin="20" VerticalOptions="CenterAndExpand" Padding="10"
-                   BackgroundColor="#FC7C04">
+            <Image x:Name="img_logo" Aspect="AspectFit"/>
+            
+            <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="12"
+                   BackgroundColor="Transparent">
 
+                
                 <StackLayout>
-                    <Image Source="Img.logo.png" Aspect="AspectFit" Margin="0,50,0,0"/>
 
-                    <Label Text="CPF:" FontSize="Medium" 
-                           TextColor="#FFFFFF"/>
+                    <Label Text="CPF ou Email:" Style="{StaticResource lbl_Login_Cadastro}"/>
+                    
                     <Entry x:Name="txt_cpf" Placeholder="XXX.XXX.XXX-XX" PlaceholderColor="#FFFFFF"
                            ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF"/>
 
-                    <Label Text="Senha:" FontSize="Medium" 
-                           TextColor="#FFFFFF"/>
+                    <Label Text="Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_senha" Placeholder="********" PlaceholderColor="#FFFFFF"
                            ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF" IsPassword="True"/>
 
                     <Button Text="Login"
                             BackgroundColor="Transparent" 
+                            Margin="15"
                             CornerRadius="10" 
                             BorderColor="#FFFFFF" 
                             BorderWidth="2"
                             HorizontalOptions="Center"
                             TextColor="#FFFFFF" FontAttributes="Bold"/>
+
+                    <Label Text="Não possui uma conta ?" TextColor="#FFFFFF" HorizontalOptions="Center" FontSize="15"
+                            Grid.Column="0" Grid.Row="0" VerticalOptions="Center" VerticalTextAlignment="End"/>
+
+                    <Button Text="Cadastre-se" TextColor="Snow" HorizontalOptions="Center" BorderColor="Transparent"
+                            BorderWidth="0" BackgroundColor="Transparent"/>
+
+
                 </StackLayout>
                 
             </Frame>
