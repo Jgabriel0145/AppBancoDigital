@@ -11,7 +11,7 @@ namespace AppBancoDigital
         {
             InitializeComponent();
 
-            MainPage = new View.Conta.ContaCadastro();
+            MainPage = new Login();
         }
 
         protected override void OnStart()

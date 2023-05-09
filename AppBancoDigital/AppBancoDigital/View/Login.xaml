@@ -3,21 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoDigital.View.Login">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid ColumnDefinitions="*, *" RowDefinitions="*,*,*,*">
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Banco Etec" FontSize="Large" TextColor="Black"/>
-            
+        <StackLayout BackgroundColor="#FC7C04">
 
-                <Label Text="CPF:" Grid.Row="1" Grid.Column="0"/>
-                <Entry Grid.Row="1" Grid.Column="1"/>
+            <Frame CornerRadius="10" Margin="20" VerticalOptions="CenterAndExpand" Padding="10"
+                   BackgroundColor="#FC7C04">
 
-                <Label Text="Senha:" Grid.Row="2" Grid.Column="0"/>
-                <Entry Grid.Row="2" Grid.Column="1"/>
+                <StackLayout>
+                    <Image Source="Img.logo.png" Aspect="AspectFit" Margin="0,50,0,0"/>
 
-                <Button Text="Login" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>   
+                    <Label Text="CPF:" FontSize="Medium" 
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txt_cpf" Placeholder="XXX.XXX.XXX-XX" PlaceholderColor="#FFFFFF"
+                           ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF"/>
+
+                    <Label Text="Senha:" FontSize="Medium" 
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txt_senha" Placeholder="********" PlaceholderColor="#FFFFFF"
+                           ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF" IsPassword="True"/>
+
+                    <Button Text="Login"
+                            BackgroundColor="Transparent" 
+                            CornerRadius="10" 
+                            BorderColor="#FFFFFF" 
+                            BorderWidth="2"
+                            HorizontalOptions="Center"
+                            TextColor="#FFFFFF" FontAttributes="Bold"/>
+                </StackLayout>
                 
-            </Grid>
-
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
