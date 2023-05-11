@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.CadastroCorrentista">
+             x:Class="AppBancoDigital.View.CadastroCorrentista"
+             BackgroundColor="#FC7C04">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#FC7C04" VerticalOptions="Center">
+            <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="12"
+                   BackgroundColor="Transparent">
+                <StackLayout>
+
+                    <Label Text="Nome Completo:" Style="{StaticResource lbl_Login_Cadastro}"/>
+                    <Entry/>
+
+                    <Label Text="CPF:" Style="{StaticResource lbl_Login_Cadastro}"/>
+                    
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -18,5 +18,17 @@ namespace AppBancoDigital.View
 
             img_logo.Source = ImageSource.FromResource("AppBancoDigital.Img.logo.png");
         }
+
+        private void BtnLinkCadastrarCorrentista_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new CadastroCorrentista());
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Erro", ex.Message, "OK");
+            }
+        }
     }
 }

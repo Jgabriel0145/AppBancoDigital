@@ -35,8 +35,9 @@
                     <Label Text="Não possui uma conta ?" TextColor="#FFFFFF" HorizontalOptions="Center" FontSize="15"
                             Grid.Column="0" Grid.Row="0" VerticalOptions="Center" VerticalTextAlignment="End"/>
 
-                    <Button Text="Cadastre-se" TextColor="Snow" HorizontalOptions="Center" BorderColor="Transparent"
-                            BorderWidth="0" BackgroundColor="Transparent"/>
+                    <Button Text="CADASTRE-SE" TextColor="Snow" HorizontalOptions="Center" BorderColor="Transparent"
+                            BorderWidth="0" BackgroundColor="Transparent" x:Name="BtnLinkCadastrarCorrentista"
+                            Clicked="BtnLinkCadastrarCorrentista_Clicked"/>
 
 
                 </StackLayout>
