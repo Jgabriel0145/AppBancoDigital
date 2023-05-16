@@ -15,7 +15,7 @@
 
                     <Label Text="CPF:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_cpf_cadastro" Placeholder="XXX.XXX.XXX-XX" PlaceholderColor="#FFFFFF"
-                           ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF"/>
+                           ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF" MaxLength="14"/>
 
                     <Label Text="Data de Nascimento:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <DatePicker x:Name="dtpck_data_nasc_cadastro" TextColor="White"
@@ -36,7 +36,8 @@
                             BorderColor="#FFFFFF" 
                             BorderWidth="2"
                             HorizontalOptions="Center"
-                            TextColor="#FFFFFF" FontAttributes="Bold"/>
+                            TextColor="#FFFFFF" FontAttributes="Bold"
+                            x:Name="BtnCadastrarCorrentista" Clicked="BtnCadastrarCorrentista_Clicked"/>
 
 
 
