@@ -35,6 +35,10 @@ namespace AppBancoDigital.View
                         correntista.Cpf = txt_cpf_cadastro.Text;
                         correntista.Data_Nasc = dtpck_data_nasc_cadastro.Date;
                         correntista.Senha = txt_senha_cadastro.Text;
+                        correntista.Ativo = true;
+                        
+                        //Apenas para teste;
+                        correntista.Id_conta = 1;
 
                         await DataServiceCorrentista.CadastrarCorrentista(correntista);
                     }
