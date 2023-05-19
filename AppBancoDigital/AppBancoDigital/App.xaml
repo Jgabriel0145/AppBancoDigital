@@ -10,5 +10,11 @@
             <Setter Property="FontSize" Value="Medium"/>
         </Style>
 
+        <Style TargetType="Entry" x:Key="entry_Login_Cadastro">
+            <Setter Property="PlaceholderColor" Value="#FFFFFF"/>
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+        </Style>
+
     </Application.Resources>
 </Application>

@@ -7,23 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using AppBancoDigital.Service;
-using AppBancoDigital.Model;
-
-namespace AppBancoDigital.View
+namespace AppBancoDigital.View.Correntista
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroCorrentista : ContentPage
+    public partial class Cadastro : ContentPage
     {
-        Correntista correntista = new Correntista();
-        public CadastroCorrentista()
+        public Cadastro()
         {
             InitializeComponent();
 
             dtpck_data_nasc_cadastro.MaximumDate = DateTime.Now;
         }
 
-        private async void BtnCadastrarCorrentista_Clicked(object sender, EventArgs e)
+        private async void BtnCadastrar_Clicked(object sender, EventArgs e)
         {
             if ((DateTime.Now.Year - dtpck_data_nasc_cadastro.Date.Year) >= 18)
             {
@@ -31,16 +27,7 @@ namespace AppBancoDigital.View
                 {
                     try
                     {
-                        correntista.Nome = txt_nome_cadastro.Text;
-                        correntista.Cpf = txt_cpf_cadastro.Text;
-                        correntista.Data_Nasc = dtpck_data_nasc_cadastro.Date;
-                        correntista.Senha = txt_senha_cadastro.Text;
-                        correntista.Ativo = true;
                         
-                        //Apenas para teste;
-                        correntista.Id_conta = 1;
-
-                        await DataServiceCorrentista.CadastrarCorrentista(correntista);
                     }
                     catch (Exception ex)
                     {

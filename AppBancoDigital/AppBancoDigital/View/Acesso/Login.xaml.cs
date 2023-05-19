@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View
+namespace AppBancoDigital.View.Acesso
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
@@ -23,7 +23,7 @@ namespace AppBancoDigital.View
         {
             try
             {
-                Navigation.PushAsync(new CadastroCorrentista());
+                Navigation.PushAsync(new View.Correntista.Cadastro());
             }
             catch (Exception ex)
             {

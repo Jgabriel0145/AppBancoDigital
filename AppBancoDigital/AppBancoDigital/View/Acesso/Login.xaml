@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:local="clr-namespace:AppBancoDigital;assembly=AppBancoDigital"
-             x:Class="AppBancoDigital.View.Login" BackgroundColor="#FC7C04">
+             x:Class="AppBancoDigital.View.Acesso.Login"
+             BackgroundColor="#FC7C04">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#FC7C04" VerticalOptions="Center">
 
             <Image x:Name="img_logo" Aspect="AspectFit"/>
-            
+
             <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="12"
                    BackgroundColor="Transparent">
 
-                
+
                 <StackLayout>
 
                     <Label Text="CPF ou Email:" Style="{StaticResource lbl_Login_Cadastro}"/>
@@ -40,7 +40,7 @@
 
 
                 </StackLayout>
-                
+
             </Frame>
         </StackLayout>
     </ContentPage.Content>

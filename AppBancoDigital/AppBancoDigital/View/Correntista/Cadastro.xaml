@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.CadastroCorrentista"
+             x:Class="AppBancoDigital.View.Correntista.Cadastro"
              BackgroundColor="#FC7C04">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#FC7C04" VerticalOptions="Center">
@@ -10,24 +10,30 @@
                 <StackLayout>
 
                     <Label Text="Nome Completo:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_nome_cadastro" ClearButtonVisibility="WhileEditing" 
-                           TextColor="#FFFFFF" Placeholder="Nome Completo..." PlaceholderColor="#FFFFFF"/>
+                    <Entry x:Name="txt_nome_cadastro" Style="{StaticResource entry_Login_Cadastro}" 
+                           Placeholder="Nome Completo..."/>
 
                     <Label Text="CPF:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_cpf_cadastro" Placeholder="XXX.XXX.XXX-XX" PlaceholderColor="#FFFFFF"
-                           ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF" MaxLength="14"/>
+                    <Entry x:Name="txt_cpf_cadastro" Placeholder="XXX.XXX.XXX-XX" 
+                           Style="{StaticResource entry_Login_Cadastro}" MaxLength="11"
+                           Keyboard="Numeric"/>
+
+                    <Label Text="Email:" Style="{StaticResource lbl_Login_Cadastro}"/>
+                    <Entry x:Name="txt_email" Placeholder="bancointer@exemplo.com"
+                           Style="{StaticResource entry_Login_Cadastro}"
+                           Keyboard="Email"/>
 
                     <Label Text="Data de Nascimento:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <DatePicker x:Name="dtpck_data_nasc_cadastro" TextColor="White"
                                 Format="dd/MM/yyyy"/>
 
                     <Label Text="Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_senha_cadastro" ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF"
-                           IsPassword="True" Placeholder="********" PlaceholderColor="#FFFFFF"/>
+                    <Entry x:Name="txt_senha_cadastro" Style="{StaticResource entry_Login_Cadastro}"
+                           IsPassword="True" Placeholder="********"/>
 
                     <Label Text="Confirmar Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_confirmar_senha_cadastro" ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF"
-                           IsPassword="True" Placeholder="********" PlaceholderColor="#FFFFFF"/>
+                    <Entry x:Name="txt_confirmar_senha_cadastro" Style="{StaticResource entry_Login_Cadastro}"
+                           IsPassword="True" Placeholder="********"/>
 
                     <Button Text="Cadastrar"
                             BackgroundColor="Transparent" 
@@ -37,7 +43,7 @@
                             BorderWidth="2"
                             HorizontalOptions="Center"
                             TextColor="#FFFFFF" FontAttributes="Bold"
-                            x:Name="BtnCadastrarCorrentista" Clicked="BtnCadastrarCorrentista_Clicked"/>
+                            x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked"/>
 
 
 
