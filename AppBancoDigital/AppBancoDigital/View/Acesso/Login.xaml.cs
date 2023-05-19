@@ -23,7 +23,7 @@ namespace AppBancoDigital.View.Acesso
         {
             try
             {
-                Navigation.PushAsync(new View.Correntista.Cadastro());
+                Navigation.PushAsync(new Correntista.Cadastro());
             }
             catch (Exception ex)
             {

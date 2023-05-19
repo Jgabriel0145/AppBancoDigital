@@ -7,11 +7,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using AppBancoDigital.Model;
+using AppBancoDigital.Service;
+
 namespace AppBancoDigital.View.Correntista
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cadastro : ContentPage
     {
+        Model.Correntista correntista;
+
         public Cadastro()
         {
             InitializeComponent();
@@ -27,7 +32,12 @@ namespace AppBancoDigital.View.Correntista
                 {
                     try
                     {
-                        
+                        correntista.Nome = txt_nome_cadastro.Text;
+                        correntista.Cpf = txt_cpf_cadastro.Text;
+                        correntista.Senha = txt_senha_cadastro.Text;
+                        correntista.Email = txt_email_cadastro.Text;
+                        correntista.Data_Nasc = dtpck_data_nasc_cadastro.Date;
+                        correntista.Data_Cadastro = DateTime.Now;
                     }
                     catch (Exception ex)
                     {

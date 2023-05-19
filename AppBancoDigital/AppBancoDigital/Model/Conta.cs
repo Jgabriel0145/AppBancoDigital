@@ -6,11 +6,10 @@ namespace AppBancoDigital.Model
 {
     public class Conta
     {
-        public string Numero { get; set; }
         public string Tipo { get; set; }
-        public string Senha { get; set;}
-        public bool Ativo { get; set;}
-
-
+        public double Saldo { get; set; }
+        public double Limite { get; set; }
+        public DateTime Data_Abertura { get; set; }
+        public int Id_Cliente { get; set; }
     }
 }

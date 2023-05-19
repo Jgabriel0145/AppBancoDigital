@@ -14,12 +14,11 @@
                            Placeholder="Nome Completo..."/>
 
                     <Label Text="CPF:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_cpf_cadastro" Placeholder="XXX.XXX.XXX-XX" 
-                           Style="{StaticResource entry_Login_Cadastro}" MaxLength="11"
-                           Keyboard="Numeric"/>
+                    <Entry x:Name="txt_cpf_cadastro" Style="{StaticResource entry_Login_Cadastro}" 
+                           MaxLength="11" Keyboard="Numeric"/>
 
                     <Label Text="Email:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_email" Placeholder="bancointer@exemplo.com"
+                    <Entry x:Name="txt_email_cadastro" Placeholder="bancointer@exemplo.com"
                            Style="{StaticResource entry_Login_Cadastro}"
                            Keyboard="Email"/>
 
