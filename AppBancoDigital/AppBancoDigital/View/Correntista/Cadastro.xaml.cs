@@ -15,8 +15,6 @@ namespace AppBancoDigital.View.Correntista
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cadastro : ContentPage
     {
-        Model.Correntista correntista;
-
         public Cadastro()
         {
             InitializeComponent();
@@ -32,12 +30,21 @@ namespace AppBancoDigital.View.Correntista
                 {
                     try
                     {
-                        correntista.Nome = txt_nome_cadastro.Text;
-                        correntista.Cpf = txt_cpf_cadastro.Text;
-                        correntista.Senha = txt_senha_cadastro.Text;
-                        correntista.Email = txt_email_cadastro.Text;
-                        correntista.Data_Nasc = dtpck_data_nasc_cadastro.Date;
-                        correntista.Data_Cadastro = DateTime.Now;
+                        Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
+                        {
+                            Nome = txt_nome_cadastro.Text,
+                            Email = txt_email_cadastro.Text,
+                            Data_Cadastro = dtpck_data_nasc_cadastro.Date,
+                            Cpf = txt_cpf_cadastro.Text,
+                            Senha = txt_senha_cadastro.Text
+                        });
+
+                        if (correntista.Id != null)
+                        {
+                            await Navigation.PushAsync(new View.Acesso.Login());
+                        }
+                        else
+                            throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
                     }
                     catch (Exception ex)
                     {

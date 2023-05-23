@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
@@ -27,9 +25,7 @@ namespace AppBancoDigital.Service
 
             string json = await PostDataToService(json_para_enviar, "/correntista/save");
 
-            Correntista correntista2 = JsonConvert.DeserializeObject<Correntista>(json);
-
-            return correntista2;
+            return JsonConvert.DeserializeObject<Correntista>(json);
         }
 
         public static async Task<List<Correntista>> SearchAsync(string query)
