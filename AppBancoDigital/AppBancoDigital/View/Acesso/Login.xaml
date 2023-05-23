@@ -29,7 +29,8 @@
                             BorderColor="#FFFFFF" 
                             BorderWidth="2"
                             HorizontalOptions="Center"
-                            TextColor="#FFFFFF" FontAttributes="Bold"/>
+                            TextColor="#FFFFFF" FontAttributes="Bold"
+                            x:Name="BtnLogin" Clicked="BtnLogin_Clicked"/>
 
                     <Label Text="Não possui uma conta ?" TextColor="#FFFFFF" HorizontalOptions="Center" FontSize="15"
                             Grid.Column="0" Grid.Row="0" VerticalOptions="Center" VerticalTextAlignment="End"/>
