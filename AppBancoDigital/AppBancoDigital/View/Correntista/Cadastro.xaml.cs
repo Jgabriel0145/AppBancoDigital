@@ -30,6 +30,9 @@ namespace AppBancoDigital.View.Correntista
                 {
                     try
                     {
+                        act_carregando.IsVisible = true;
+                        act_carregando.IsRunning = true;
+
                         Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
                         {
                             Nome = txt_nome_cadastro.Text,
@@ -49,6 +52,11 @@ namespace AppBancoDigital.View.Correntista
                     catch (Exception ex)
                     {
                         await DisplayAlert("Erro", ex.Message, "OK");
+                    }
+                    finally
+                    {
+                        act_carregando.IsRunning = false;
+                        act_carregando.IsVisible = false;
                     }
                 }
                 else await DisplayAlert("Aviso", "A senha confirmada está diferente.", "OK");

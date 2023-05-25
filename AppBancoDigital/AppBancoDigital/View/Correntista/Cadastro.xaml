@@ -9,6 +9,8 @@
                    BackgroundColor="Transparent">
                 <StackLayout>
 
+                    <ActivityIndicator Color="White" IsVisible="false" IsRunning="false" x:Name="act_carregando"/>
+
                     <Label Text="Nome Completo:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_nome_cadastro" Style="{StaticResource entry_Login_Cadastro}" 
                            Placeholder="Nome Completo..."/>

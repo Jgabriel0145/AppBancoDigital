@@ -56,7 +56,7 @@ namespace AppBancoDigital.Service
 
             List<Correntista> list_correntista = JsonConvert.DeserializeObject<List<Correntista>>(json);
 
-            return list_correntista;*/
-        }
+            return list_correntista;
+        }*/
     }
 }
