@@ -26,43 +26,55 @@ namespace AppBancoDigital.View.Correntista
         {
             if ((DateTime.Now.Year - dtpck_data_nasc_cadastro.Date.Year) >= 18)
             {
-                if (txt_senha_cadastro.Text == txt_confirmar_senha_cadastro.Text)
+                if (txt_senha_cadastro.Text.Length >= 8)
                 {
-                    try
+                    if (txt_senha_cadastro.Text == txt_confirmar_senha_cadastro.Text)
                     {
-                        act_carregando.IsVisible = true;
-                        act_carregando.IsRunning = true;
-
-                        Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
+                        try
                         {
-                            Nome = txt_nome_cadastro.Text,
-                            Email = txt_email_cadastro.Text,
-                            Data_Cadastro = dtpck_data_nasc_cadastro.Date,
-                            Cpf = txt_cpf_cadastro.Text,
-                            Senha = txt_senha_cadastro.Text
-                        });
+                            act_carregando.IsVisible = true;
+                            act_carregando.IsRunning = true;
 
-                        if (correntista.Id != null)
-                        {
-                            await Navigation.PushAsync(new View.Acesso.Login());
+                            Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
+                            {
+                                Nome = txt_nome_cadastro.Text,
+                                Email = txt_email_cadastro.Text,
+                                Cpf = txt_cpf_cadastro.Text,
+                                Data_Nasc = dtpck_data_nasc_cadastro.Date,
+                                Senha = txt_senha_cadastro.Text
+                            });
+
+                            if (correntista.Id != null)
+                            {
+                                App.DadosCorrentista = correntista;
+
+                                await Navigation.PushAsync(new TelaInicial());
+                            }
+                            else
+                                throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
                         }
-                        else
-                            throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.StackTrace);
+                            await DisplayAlert("Erro", ex.Message, "OK");
+                        }
+                        finally
+                        {
+                            act_carregando.IsRunning = false;
+                            act_carregando.IsVisible = false;
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        await DisplayAlert("Erro", ex.Message, "OK");
-                    }
-                    finally
-                    {
-                        act_carregando.IsRunning = false;
-                        act_carregando.IsVisible = false;
-                    }
+                    else await DisplayAlert("Aviso", "A senha confirmada está diferente.", "OK");
                 }
-                else await DisplayAlert("Aviso", "A senha confirmada está diferente.", "OK");
-
+                else await DisplayAlert("Aviso", "A senha deve conter no mínimo 8 caracteres.", "OK");
             }
             else await DisplayAlert("Aviso", "A idade mínima para criar uma conta é 18 anos.", "OK");
+        }
+
+        private void txt_senha_cadastro_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_senha_cadastro.Text.Length <= 7) lbl_aviso_senha.IsVisible = true;
+            else lbl_aviso_senha.IsVisible = false;
         }
     }
 }

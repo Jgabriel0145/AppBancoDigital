@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoDigital.View.Correntista.Cadastro"
-             BackgroundColor="#FC7C04">
+             BackgroundColor="#FC7C04"
+             Title="Cadastro">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#FC7C04" VerticalOptions="Center">
-            <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="12"
+            <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="10"
                    BackgroundColor="Transparent">
                 <StackLayout>
 
@@ -16,7 +17,8 @@
                            Placeholder="Nome Completo..."/>
 
                     <Label Text="CPF:" Style="{StaticResource lbl_Login_Cadastro}"/>
-                    <Entry x:Name="txt_cpf_cadastro" Style="{StaticResource entry_Login_Cadastro}" 
+                    <Entry x:Name="txt_cpf_cadastro" Style="{StaticResource entry_Login_Cadastro}"
+                           Placeholder="12345678912"
                            MaxLength="11" Keyboard="Numeric"/>
 
                     <Label Text="Email:" Style="{StaticResource lbl_Login_Cadastro}"/>
@@ -30,7 +32,10 @@
 
                     <Label Text="Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_senha_cadastro" Style="{StaticResource entry_Login_Cadastro}"
-                           IsPassword="True" Placeholder="********"/>
+                           IsPassword="True" Placeholder="********"
+                           TextChanged="txt_senha_cadastro_TextChanged"/>
+                    <Label Text="A senha deve conter no mínimo 8 caracteres*" TextColor="#800000" FontSize="Small" IsVisible="False"
+                           x:Name="lbl_aviso_senha"/>
 
                     <Label Text="Confirmar Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_confirmar_senha_cadastro" Style="{StaticResource entry_Login_Cadastro}"

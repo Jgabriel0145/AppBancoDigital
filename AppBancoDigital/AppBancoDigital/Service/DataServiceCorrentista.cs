@@ -14,6 +14,11 @@ namespace AppBancoDigital.Service
         {
             var json_para_enviar = JsonConvert.SerializeObject(correntista);
 
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("Dados digitados em JSON: ");
+            Console.WriteLine(json_para_enviar);
+            Console.WriteLine("__________________________________________________________________");
+
             string json = await PostDataToService(json_para_enviar, "/correntista/save");
 
             return JsonConvert.DeserializeObject<Correntista>(json);
@@ -22,6 +27,11 @@ namespace AppBancoDigital.Service
         public static async Task<Correntista> LoginAsync(Correntista correntista)
         {
             var json_para_enviar = JsonConvert.SerializeObject(correntista);
+
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("Dados digitados em JSON: ");
+            Console.WriteLine(json_para_enviar);
+            Console.WriteLine("__________________________________________________________________");
 
             string json = await PostDataToService(json_para_enviar, "/correntista/login");
 
