@@ -41,7 +41,8 @@ namespace AppBancoDigital.View.Correntista
                                 Email = txt_email_cadastro.Text,
                                 Cpf = txt_cpf_cadastro.Text,
                                 Data_Nasc = dtpck_data_nasc_cadastro.Date,
-                                Senha = txt_senha_cadastro.Text
+                                Senha = txt_senha_cadastro.Text,
+                                Data_Cadastro = DateTime.Now
                             });
 
                             if (correntista.Id != null)

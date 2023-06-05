@@ -12,6 +12,6 @@ namespace AppBancoDigital.Model
         public DateTime Data_Nasc { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
-        //public DateTime Data_Cadastro { get; set; }
+        public DateTime Data_Cadastro { get; set; }
     }
 }
