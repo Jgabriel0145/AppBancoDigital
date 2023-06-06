@@ -5,8 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Bem-Vindo(a) ao Banco Inter!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
