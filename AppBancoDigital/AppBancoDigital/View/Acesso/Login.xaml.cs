@@ -27,11 +27,11 @@ namespace AppBancoDigital.View.Acesso
             {
                 Model.Correntista correntista = await DataServiceCorrentista.LoginAsync(new Model.Correntista
                 {
-                    Cpf = txt_cpf_login.Text,
-                    Senha = txt_senha_login.Text
+                    cpf = txt_cpf_login.Text,
+                    senha = txt_senha_login.Text
                 });
 
-                if (correntista.Id != null)
+                if (correntista.id != null)
                 {
                     App.DadosCorrentista = correntista;
                     App.Current.MainPage = new NavigationPage(new View.TelaInicial());

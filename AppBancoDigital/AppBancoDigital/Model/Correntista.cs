@@ -6,12 +6,12 @@ namespace AppBancoDigital.Model
 {
     public class Correntista
     {
-        public int? Id { get; set; }
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public DateTime Data_Nasc { get; set; }
-        public string Senha { get; set; }
-        public string Email { get; set; }
-        public DateTime Data_Cadastro { get; set; }
+        public int? id { get; set; }
+        public string nome { get; set; }
+        public string cpf { get; set; }
+        public DateTime data_nasc { get; set; }
+        public string senha { get; set; }
+        public string email { get; set; }
+        public DateTime data_cadastro { get; set; }
     }
 }

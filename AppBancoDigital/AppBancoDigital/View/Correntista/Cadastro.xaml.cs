@@ -37,15 +37,15 @@ namespace AppBancoDigital.View.Correntista
 
                             Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
                             {
-                                Nome = txt_nome_cadastro.Text,
-                                Email = txt_email_cadastro.Text,
-                                Cpf = txt_cpf_cadastro.Text,
-                                Data_Nasc = dtpck_data_nasc_cadastro.Date,
-                                Senha = txt_senha_cadastro.Text,
-                                Data_Cadastro = DateTime.Now
+                                nome = txt_nome_cadastro.Text,
+                                email = txt_email_cadastro.Text,
+                                cpf = txt_cpf_cadastro.Text,
+                                data_nasc = dtpck_data_nasc_cadastro.Date,
+                                senha = txt_senha_cadastro.Text,
+                                data_cadastro = DateTime.Now
                             });
 
-                            if (correntista.Id != null)
+                            if (correntista.id != null)
                             {
                                 App.DadosCorrentista = correntista;
 
