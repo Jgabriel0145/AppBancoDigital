@@ -4,10 +4,17 @@
              x:Class="AppBancoDigital.View.TelaInicial">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Bem-Vindo(a) ao Banco Inter!"
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand"/>
             
+            <StackLayout>
+                <Label Text="Bem-Vindo(a) ao Banco Inter!"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*">
+                <Button x:Name="btn_pix" Text="Pix" VerticalOptions="Center" Grid.Column="0" Grid.Row="0"/>
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
