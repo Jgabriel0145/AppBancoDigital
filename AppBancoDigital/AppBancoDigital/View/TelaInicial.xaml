@@ -12,7 +12,7 @@
             </StackLayout>
 
             <Grid RowDefinitions="*" ColumnDefinitions="*,*,*">
-                <Button x:Name="btn_pix" Text="Pix" VerticalOptions="Center" Grid.Column="0" Grid.Row="0"/>
+                <Button x:Name="btn_pix" Text="Pix" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" IsEnabled="False"/>
             </Grid>
 
         </StackLayout>
