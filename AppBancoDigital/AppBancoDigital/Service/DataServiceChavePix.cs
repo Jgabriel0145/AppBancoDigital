@@ -29,9 +29,9 @@ namespace AppBancoDigital.Service
             return list_chaves;
         }
 
-        public static async Task<List<ChavePix>> ExcluirChavePix(string id)
+        public static async Task<List<ChavePix>> ExcluirChavePix(ChavePix chave)
         {
-            var json_para_enviar = JsonConvert.SerializeObject(id);
+            var json_para_enviar = JsonConvert.SerializeObject(chave);
 
             string json = await PostDataToService(json_para_enviar, "/chavepix/excluir");
 
