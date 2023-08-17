@@ -42,16 +42,16 @@ namespace AppBancoDigital.Service
             return JsonConvert.DeserializeObject<Correntista>(json);
         }
 
-        /*public static async Task<List<Correntista>> GetCorrentistaAsync()
+        public static async Task<List<Correntista>> GetCorrentistaAsync()
         {
             string json = await GetDataFromService("/correntista");
 
             List<Correntista> list_correntista = JsonConvert.DeserializeObject<List<Correntista>>(json);
 
             return list_correntista;
-        }*/
+        }
 
-        /*public static async Task<List<Correntista>> SearchAsync(string query)
+        public static async Task<List<Correntista>> SearchAsync(string query)
         {
             var json_para_enviar = JsonConvert.SerializeObject(query);
 
@@ -60,9 +60,9 @@ namespace AppBancoDigital.Service
             List<Correntista> list_correntista = JsonConvert.DeserializeObject<List<Correntista>>(json);
 
             return list_correntista;
-        }*/
+        }
 
-        /*public static async Task<List<Correntista>> DeleteAsync(int id)
+        public static async Task<List<Correntista>> DeleteAsync(int id)
         {
             var json_para_enviar = JsonConvert.SerializeObject(id);
 
@@ -71,6 +71,6 @@ namespace AppBancoDigital.Service
             List<Correntista> list_correntista = JsonConvert.DeserializeObject<List<Correntista>>(json);
 
             return list_correntista;
-        }*/
+        }
     }
 }
