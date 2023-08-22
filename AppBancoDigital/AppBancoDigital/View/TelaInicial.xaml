@@ -5,16 +5,14 @@
              BackgroundColor="#FFFFFF">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="logo_navbar" Text=""/>
+        <ToolbarItem x:Name="logo_navbar"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid BackgroundColor="#FC7C04" ColumnDefinitions="*, *" RowDefinitions="*">
-                <Image Grid.Column="0" Grid.Row="0" x:Name="img_logo" Aspect="AspectFit"
-                       HeightRequest="55"/>
-                <Label x:Name="lbl_correntista" FontSize="25" TextColor="#FFFFFF" Text=""
-                    HorizontalTextAlignment="Start" Padding="10" Grid.Row="0" Grid.Column="1"/>
+            <Grid BackgroundColor="#FC7C04" ColumnDefinitions="*" RowDefinitions="*">
+                <Label x:Name="lbl_correntista" FontSize="25" TextColor="#FFFFFF"
+                    HorizontalTextAlignment="Start" Padding="10" Grid.Row="0" Grid.Column="0"/>
             </Grid>
 
             <Grid RowDefinitions="125, 30, *" ColumnDefinitions="*,*,*">
