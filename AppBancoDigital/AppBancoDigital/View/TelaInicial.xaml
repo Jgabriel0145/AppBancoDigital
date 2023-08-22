@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.TelaInicial">
+             x:Class="AppBancoDigital.View.TelaInicial"
+             BackgroundColor="#FFFFFF">
     <ContentPage.Content>
         <StackLayout>
             
             <StackLayout>
-                <Label Text="Bem-Vindo(a) ao Banco Inter!"
+                <Label Text="Inter" FontSize="50" TextColor="#FC7C04"
                     VerticalOptions="Center" 
                     HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
 
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*">
-                <Button x:Name="btn_pix" Text="Pix" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" IsEnabled="False"/>
+            <Grid RowDefinitions="125, 30, *" ColumnDefinitions="*,*,*">
+                <ImageButton VerticalOptions="Center" x:Name="btn_icone_pix" Grid.Column="0" 
+                             Grid.Row="0" BackgroundColor="White" Margin="17"
+                             BorderWidth="1" BorderColor="Black" CornerRadius="50"
+                             />
+                <Label Text="PIX" TextColor="Black" Grid.Row="1" Grid.Column="0"
+                       HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
             </Grid>
 
         </StackLayout>

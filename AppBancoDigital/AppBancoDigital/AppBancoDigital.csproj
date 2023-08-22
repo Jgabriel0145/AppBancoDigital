@@ -12,11 +12,15 @@
 
   <ItemGroup>
     <None Remove="Img\logo.png" />
+    <None Remove="Img\pix_icone.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Img\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Img\pix_icone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
