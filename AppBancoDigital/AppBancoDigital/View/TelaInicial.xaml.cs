@@ -18,6 +18,8 @@ namespace AppBancoDigital.View
         {
             InitializeComponent();
 
+            lbl_correntista.Text = App.DadosCorrentista.nome;
+            logo_navbar.IconImageSource = ImageSource.FromResource("AppBancoDigital.Img.logo.png");
             btn_icone_pix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
         }
     }

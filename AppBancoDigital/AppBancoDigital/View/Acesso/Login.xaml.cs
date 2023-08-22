@@ -23,6 +23,8 @@ namespace AppBancoDigital.View.Acesso
 
         private async void BtnLogin_Clicked(object sender, EventArgs e)
         {
+            act_buscando.IsVisible = true;
+            act_buscando.IsRunning = true;
             try
             {
                 Model.Correntista correntista = await DataServiceCorrentista.LoginAsync(new Model.Correntista
@@ -42,6 +44,11 @@ namespace AppBancoDigital.View.Acesso
             catch(Exception ex)
             {
                 await DisplayAlert("Erro.", ex.Message, "OK");
+            }
+            finally
+            {
+                act_buscando.IsVisible = false;
+                act_buscando.IsRunning = false;
             }
         }
 

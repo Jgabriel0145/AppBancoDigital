@@ -49,7 +49,7 @@ namespace AppBancoDigital.View.Correntista
                             {
                                 App.DadosCorrentista = correntista;
 
-                                Navigation.PopAsync();
+                                await Navigation.PopAsync();
                             }
                             else
                                 throw new Exception("Ocorreu um erro ao salvar seu cadastro.");

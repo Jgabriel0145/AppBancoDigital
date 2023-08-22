@@ -6,6 +6,7 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#FC7C04" VerticalOptions="Center">
+            <ActivityIndicator IsVisible="False" IsRunning="False" Color="White" x:Name="act_buscando"/>
 
             <Image x:Name="img_logo" Aspect="AspectFit"/>
 
