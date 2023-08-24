@@ -30,40 +30,46 @@ namespace AppBancoDigital.View.Correntista
                 {
                     if (txt_senha_cadastro.Text == txt_confirmar_senha_cadastro.Text)
                     {
-                        try
+                        bool cpf_valido = Model.Correntista.ValidarCpf(txt_cpf_cadastro.Text);
+
+                        if (cpf_valido == true)
                         {
-                            act_carregando.IsVisible = true;
-                            act_carregando.IsRunning = true;
-
-                            Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
+                            try
                             {
-                                nome = txt_nome_cadastro.Text,
-                                email = txt_email_cadastro.Text,
-                                cpf = txt_cpf_cadastro.Text,
-                                data_nasc = dtpck_data_nasc_cadastro.Date,
-                                senha = txt_senha_cadastro.Text,
-                                data_cadastro = DateTime.Now
-                            });
+                                act_carregando.IsVisible = true;
+                                act_carregando.IsRunning = true;
 
-                            if (correntista.id != null)
-                            {
-                                App.DadosCorrentista = correntista;
+                                Model.Correntista correntista = await DataServiceCorrentista.CadastrarCorrentista(new Model.Correntista
+                                {
+                                    nome = txt_nome_cadastro.Text,
+                                    email = txt_email_cadastro.Text,
+                                    cpf = txt_cpf_cadastro.Text,
+                                    data_nasc = dtpck_data_nasc_cadastro.Date,
+                                    senha = txt_senha_cadastro.Text,
+                                    data_cadastro = DateTime.Now
+                                });
 
-                                await Navigation.PopAsync();
+                                if (correntista.id != null)
+                                {
+                                    App.DadosCorrentista = correntista;
+
+                                    await Navigation.PopAsync();
+                                }
+                                else
+                                    throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
                             }
-                            else
-                                throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.StackTrace);
+                                await DisplayAlert("Erro", ex.Message, "OK");
+                            }
+                            finally
+                            {
+                                act_carregando.IsRunning = false;
+                                act_carregando.IsVisible = false;
+                            }
                         }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.StackTrace);
-                            await DisplayAlert("Erro", ex.Message, "OK");
-                        }
-                        finally
-                        {
-                            act_carregando.IsRunning = false;
-                            act_carregando.IsVisible = false;
-                        }
+                        else await DisplayAlert("Aviso", "CPF inválido", "OK");
                     }
                     else await DisplayAlert("Aviso", "A senha confirmada está diferente.", "OK");
                 }
