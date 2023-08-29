@@ -22,7 +22,12 @@ namespace AppBancoDigital.View
 
             lbl_correntista.Text = App.DadosCorrentista.nome;
             
-            btn_icone_pix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
+            BtnPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
+        }
+
+        private void BtnPix_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pix.CriarChavePix());
         }
     }
 }

@@ -64,6 +64,10 @@ namespace AppBancoDigital.View.Acesso
             }
         }
 
-        
+        private void BtnExibirSenha_Clicked(object sender, EventArgs e)
+        {
+            if (txt_senha_login.IsPassword == true) txt_senha_login.IsPassword = false;
+            else txt_senha_login.IsPassword = true;
+        }
     }
 }

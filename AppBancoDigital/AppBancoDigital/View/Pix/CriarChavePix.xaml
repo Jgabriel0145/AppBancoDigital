@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancoDigital.View.Pix.CriarChavePix"
+             BackgroundColor="#FC7C04">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="Transparent" RowDefinitions="*" ColumnDefinitions="*"
+                  VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="10"
+                   BackgroundColor="Transparent">
+                    <StackLayout>
+
+                        <ActivityIndicator Color="White" IsVisible="false" IsRunning="false" x:Name="act_carregando"/>
+
+                        <Label Text="Defina sua chave pix:"/>
+                        <RadioButton Content="CPF" GroupName="DefinirChavePix" x:Name="RadCpf"/>
+                        <RadioButton Content="Email" GroupName="DefinirChavePix" x:Name="RadEmail"/>
+                        <RadioButton Content="Telefone" GroupName="DefinirChavePix" x:Name="RadTelefone"/>
+                        <RadioButton Content="Personalizada" GroupName="DefinirChavePix"
+                                     x:Name="PersonalizarChave" CheckedChanged="PersonalizarChave_CheckedChanged"/>
+
+                        <Entry x:Name="txt_chave_pix_cadastro" Style="{StaticResource entry_Login_Cadastro}" 
+                           Placeholder="Chave pix..." IsVisible="false"/>
+
+                        <Button Text="Cadastrar"
+                            BackgroundColor="Transparent" 
+                            Margin="30"
+                            CornerRadius="10" 
+                            BorderColor="#FFFFFF" 
+                            BorderWidth="2"
+                            HorizontalOptions="Center"
+                            TextColor="#FFFFFF" FontAttributes="Bold"
+                            x:Name="BtnCadastrar" Clicked="BtnCadastrar_Clicked"/>
+
+
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

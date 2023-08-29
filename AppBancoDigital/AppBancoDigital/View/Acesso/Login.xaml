@@ -24,6 +24,9 @@
                     <Label Text="Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_senha_login" Placeholder="********" PlaceholderColor="#FFFFFF"
                            ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF" IsPassword="True"/>
+                    <Button Text="Exibir Senha" TextColor="#FFFFFF" FontSize="Small" x:Name="BtnExibirSenha"
+                            Clicked="BtnExibirSenha_Clicked" BorderWidth="0" 
+                            BackgroundColor="Transparent" HorizontalOptions="End"/>
 
                     <Button Text="Login"
                             BackgroundColor="Transparent" 
