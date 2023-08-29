@@ -12,6 +12,10 @@ namespace AppBancoDigital.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Rg.Plugins.Popup.Popup.Init(this);
+
+            Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

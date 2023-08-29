@@ -21,12 +21,36 @@ namespace AppBancoDigital.View.Pix
             InitializeComponent();
         }
 
-        private void BtnCadastrar_Clicked(object sender, EventArgs e)
+        private async void BtnCadastrar_Clicked(object sender, EventArgs e)
         {
-            if (RadCpf.IsChecked == true)
+            act_carregando.IsRunning = true;
+            act_carregando.IsVisible = true;
+            try
             {
-                pix.tipo = "CPF";
+                if (RadCpf.IsChecked == true) pix.tipo = "cpf";
+                else
+                {
+                    if (RadEmail.IsChecked == true) pix.tipo = "email";
+                    else
+                    {
+                        if (RadTelefone.IsChecked == true) pix.tipo = "telefone";
+                        else
+                            pix.tipo = "personalizada";
+                    }
+                }
+
+                await DisplayAlert("", pix.tipo, "OK");
             }
+            catch (Exception ex) 
+            {
+                await DisplayAlert("Erro", ex.Message, "OK");
+            }
+            finally
+            {
+                act_carregando.IsVisible = false;
+                act_carregando.IsRunning = false;
+            }
+                
         }
 
         private void PersonalizarChave_CheckedChanged(object sender, CheckedChangedEventArgs e)
