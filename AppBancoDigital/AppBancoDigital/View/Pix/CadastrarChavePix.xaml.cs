@@ -13,10 +13,10 @@ using AppBancoDigital.Service;
 namespace AppBancoDigital.View.Pix
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CriarChavePix : ContentPage
+    public partial class CadastrarChavePix : ContentPage
     {
         ChavePix pix = new ChavePix();
-        public CriarChavePix()
+        public CadastrarChavePix()
         {
             InitializeComponent();
         }
@@ -39,9 +39,11 @@ namespace AppBancoDigital.View.Pix
                     }
                 }
 
+                //if ()
+
                 await DisplayAlert("", pix.tipo, "OK");
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 await DisplayAlert("Erro", ex.Message, "OK");
             }
@@ -50,13 +52,6 @@ namespace AppBancoDigital.View.Pix
                 act_carregando.IsVisible = false;
                 act_carregando.IsRunning = false;
             }
-                
-        }
-
-        private void PersonalizarChave_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if (txt_chave_pix_cadastro.IsVisible ==  false) txt_chave_pix_cadastro.IsVisible = true;
-            else txt_chave_pix_cadastro.IsVisible = false;
         }
     }
 }

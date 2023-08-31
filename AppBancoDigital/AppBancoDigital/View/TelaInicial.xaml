@@ -21,7 +21,7 @@
                 <ImageButton VerticalOptions="Center" x:Name="BtnPix" Grid.Column="0" 
                              Grid.Row="0" BackgroundColor="White" Margin="17"
                              BorderWidth="1" BorderColor="Black" CornerRadius="50"
-                             Clicked="BtnPix_Clicked"/>
+                             Clicked="BtnPix_Clicked" Padding="5"/>
                 <Label Text="PIX" TextColor="Black" Grid.Row="1" Grid.Column="0"
                        HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
             </Grid>

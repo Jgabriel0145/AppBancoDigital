@@ -37,12 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\Pix\CriarChavePix.xaml.cs">
-      <DependentUpon>CriarChavePix.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="View\Acesso\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -52,7 +46,7 @@
     <EmbeddedResource Update="View\NovoPopUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Pix\CriarChavePix.xaml">
+    <EmbeddedResource Update="View\Pix\CadastrarChavePix.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\TelaInicial.xaml">

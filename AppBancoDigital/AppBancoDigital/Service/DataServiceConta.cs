@@ -10,6 +10,9 @@ namespace AppBancoDigital.Service
 {
     public class DataServiceConta : DataService
     {
-        
+        /*public static Task<Conta> ProcurarConta()
+        {
+
+        }*/
     }
 }

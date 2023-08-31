@@ -27,7 +27,7 @@ namespace AppBancoDigital.View
 
         private void BtnPix_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Pix.CriarChavePix());
+            Navigation.PushAsync(new Pix.CadastrarChavePix());
         }
     }
 }

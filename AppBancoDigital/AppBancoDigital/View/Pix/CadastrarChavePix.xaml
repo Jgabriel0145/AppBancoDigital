@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.Pix.CriarChavePix"
+             x:Class="AppBancoDigital.View.Pix.CadastrarChavePix"
              BackgroundColor="#FFFFFF">
     <ContentPage.Content>
         <StackLayout>
@@ -17,12 +17,12 @@
                         <RadioButton Content="CPF" GroupName="DefinirChavePix" x:Name="RadCpf" TextColor="#000000"/>
                         <RadioButton Content="Email" GroupName="DefinirChavePix" x:Name="RadEmail" TextColor="#000000"/>
                         <RadioButton Content="Telefone" GroupName="DefinirChavePix" x:Name="RadTelefone" TextColor="#000000"/>
-                        <RadioButton Content="Personalizada" GroupName="DefinirChavePix"
-                                     x:Name="PersonalizarChave" CheckedChanged="PersonalizarChave_CheckedChanged" TextColor="#000000"/>
 
-                        <Entry x:Name="txt_chave_pix_cadastro" Style="{StaticResource entry_Login_Cadastro}" 
-                           Placeholder="Chave pix..." IsVisible="false"/>
+                        <Label Text="Selecione o tipo de conta:" TextColor="#000000" FontSize="22" FontAttributes="Bold"/>
 
+                        <RadioButton Content="Corrente" GroupName="DefinirTipoConta" x:Name="RadCorrente" TextColor="#000000"/>
+                        <RadioButton Content="Poupança" GroupName="DefinirTipoConta" x:Name="RadPoupanca" TextColor="#000000"/>
+                        
                         <Button Text="Cadastrar"
                             BackgroundColor="Transparent" 
                             Margin="30"
