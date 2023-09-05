@@ -26,6 +26,12 @@
                        HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
             </Grid>
 
+            <StackLayout>
+                <Label Text="P"/>
+                <Label x:Name="lbl_poupanca_teste"/>
+                <Label Text="C"/>
+                <Label x:Name="lbl_corrente_teste"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -10,6 +10,7 @@ namespace AppBancoDigital.Model
         public string tipo { get; set; }
         public double saldo { get; set; }
         public double limite { get; set; }
+        public DateTime data_cadastro { get; set; }
         public Correntista id_correntista { get; set; }
     }
 }

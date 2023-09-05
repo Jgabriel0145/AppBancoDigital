@@ -31,15 +31,8 @@ namespace AppBancoDigital.View.Pix
                 else
                 {
                     if (RadEmail.IsChecked == true) pix.tipo = "email";
-                    else
-                    {
-                        if (RadTelefone.IsChecked == true) pix.tipo = "telefone";
-                        else
-                            pix.tipo = "personalizada";
-                    }
+                    else if (RadTelefone.IsChecked == true) pix.tipo = "telefone";
                 }
-
-                //if ()
 
                 await DisplayAlert("", pix.tipo, "OK");
             }

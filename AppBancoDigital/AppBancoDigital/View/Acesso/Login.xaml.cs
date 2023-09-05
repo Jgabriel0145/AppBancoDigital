@@ -35,7 +35,13 @@ namespace AppBancoDigital.View.Acesso
 
                 if (correntista.id != null)
                 {
+                    //Model.Conta conta_corrente = await DataServiceConta.ProcurarContaCorrente(correntista);
+                    //Model.Conta conta_poupanca = await DataServiceConta.ProcurarContaPoupanca(correntista);
+
                     App.DadosCorrentista = correntista;
+                    //App.ContaCorrente = conta_corrente;
+                    //App.ContaPoupanca = conta_poupanca;
+
                     App.Current.MainPage = new NavigationPage(new View.TelaInicial());
                 }
                 else

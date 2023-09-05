@@ -10,18 +10,21 @@
                 <Frame CornerRadius="10" VerticalOptions="CenterAndExpand" Margin="7" Padding="10"
                    BackgroundColor="Transparent">
                     <StackLayout>
-
                         <ActivityIndicator Color="White" IsVisible="false" IsRunning="false" x:Name="act_carregando"/>
 
-                        <Label Text="Defina sua chave pix:" TextColor="#000000" FontSize="22" FontAttributes="Bold"/>
-                        <RadioButton Content="CPF" GroupName="DefinirChavePix" x:Name="RadCpf" TextColor="#000000"/>
-                        <RadioButton Content="Email" GroupName="DefinirChavePix" x:Name="RadEmail" TextColor="#000000"/>
-                        <RadioButton Content="Telefone" GroupName="DefinirChavePix" x:Name="RadTelefone" TextColor="#000000"/>
+                        <StackLayout Margin="10" BackgroundColor="Transparent">
+                            <Label Text="Defina sua chave pix:" TextColor="#000000" FontSize="22" FontAttributes="Bold"/>
+                            <RadioButton Content="CPF" GroupName="DefinirChavePix" x:Name="RadCpf" TextColor="#000000"/>
+                            <RadioButton Content="Email" GroupName="DefinirChavePix" x:Name="RadEmail" TextColor="#000000"/>
+                            <RadioButton Content="Telefone" GroupName="DefinirChavePix" x:Name="RadTelefone" TextColor="#000000"/>
+                        </StackLayout>
 
-                        <Label Text="Selecione o tipo de conta:" TextColor="#000000" FontSize="22" FontAttributes="Bold"/>
+                        <StackLayout Margin="10" BackgroundColor="Transparent">
+                            <Label Text="Selecione o tipo de conta:" TextColor="#000000" FontSize="22" FontAttributes="Bold"/>
 
-                        <RadioButton Content="Corrente" GroupName="DefinirTipoConta" x:Name="RadCorrente" TextColor="#000000"/>
-                        <RadioButton Content="Poupança" GroupName="DefinirTipoConta" x:Name="RadPoupanca" TextColor="#000000"/>
+                            <RadioButton Content="Corrente" GroupName="DefinirTipoConta" x:Name="RadCorrente" TextColor="#000000"/>
+                            <RadioButton Content="Poupança" GroupName="DefinirTipoConta" x:Name="RadPoupanca" TextColor="#000000"/>
+                        </StackLayout>
                         
                         <Button Text="Cadastrar"
                             BackgroundColor="Transparent" 

@@ -8,6 +8,9 @@ namespace AppBancoDigital
     public partial class App : Application
     {
         public static Model.Correntista DadosCorrentista { get; set; }
+        public static Model.Conta ContaCorrente { get; set; }
+        public static Model.Conta ContaPoupanca { get; set; }
+
         public App()
         {
             InitializeComponent();
