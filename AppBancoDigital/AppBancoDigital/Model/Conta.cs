@@ -11,6 +11,6 @@ namespace AppBancoDigital.Model
         public double saldo { get; set; }
         public double limite { get; set; }
         public DateTime data_cadastro { get; set; }
-        public Correntista id_correntista { get; set; }
+        public int id_correntista { get; set; }
     }
 }

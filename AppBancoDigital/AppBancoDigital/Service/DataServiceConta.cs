@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,25 @@ namespace AppBancoDigital.Service
             Conta conta = JsonConvert.DeserializeObject<Conta>(json);
 
             return conta;
+        }
+
+        public async static Task<List<Conta>> ProcurarContas(Model.Correntista correntista)
+        {
+            var post_json = JsonConvert.SerializeObject(correntista);
+
+            string json = await DataService.PostDataToService(post_json, "/conta/searchcontas");
+
+            Console.WriteLine("--------------------JSON DATASERVICECONTA ----------------------------");
+            Console.WriteLine(json);
+            Console.WriteLine("-------------------------------------------------------------------------");
+
+            List<Conta> list_contas = JsonConvert.DeserializeObject<List<Conta>>(json);
+
+            Console.WriteLine("--------------------LIST CONTAS DATASERVICE ----------------------------");
+            Console.WriteLine(list_contas);
+            Console.WriteLine("-------------------------------------------------------------------------");
+
+            return list_contas;
         }
     }
 }

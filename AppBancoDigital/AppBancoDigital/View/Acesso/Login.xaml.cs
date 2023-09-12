@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using AppBancoDigital.Service;
+using AppBancoDigital.Model;
 
 namespace AppBancoDigital.View.Acesso
 {
@@ -27,18 +28,31 @@ namespace AppBancoDigital.View.Acesso
             act_buscando.IsRunning = true;
             try
             {
-                Model.Correntista correntista = await DataServiceCorrentista.LoginAsync(new Model.Correntista
+                App.DadosCorrentista = await DataServiceCorrentista.LoginAsync(new Model.Correntista
                 {
                     cpf = txt_cpf_login.Text,
                     senha = txt_senha_login.Text
                 });
 
-                if (correntista.id != null)
+                if (App.DadosCorrentista.id != null)
                 {
                     //Model.Conta conta_corrente = await DataServiceConta.ProcurarContaCorrente(correntista);
                     //Model.Conta conta_poupanca = await DataServiceConta.ProcurarContaPoupanca(correntista);
+                    App.ListaContas = await DataServiceConta.ProcurarContas(App.DadosCorrentista);
 
-                    App.DadosCorrentista = correntista;
+
+                    foreach (Conta contas in App.ListaContas)
+                    {
+                        Console.WriteLine("_____________________________");
+                        Console.WriteLine(contas.id);
+                        Console.WriteLine("_____________________________");
+                    }
+
+
+                    //Console.WriteLine("-------LISTA CONTAS----------------------");
+                    //Console.WriteLine(lista_contas);
+                    //Console.WriteLine("-----------------------------------------");
+
                     //App.ContaCorrente = conta_corrente;
                     //App.ContaPoupanca = conta_poupanca;
 

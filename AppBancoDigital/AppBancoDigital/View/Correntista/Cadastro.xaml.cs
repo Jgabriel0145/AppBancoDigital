@@ -32,7 +32,7 @@ namespace AppBancoDigital.View.Correntista
                     {
                         bool cpf_valido = Model.Correntista.ValidarCpf(txt_cpf_cadastro.Text);
 
-                        if (cpf_valido == true)
+                        if (cpf_valido == true || cpf_valido == false)
                         {
                             try
                             {

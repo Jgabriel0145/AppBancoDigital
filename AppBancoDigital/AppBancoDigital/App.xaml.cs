@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppBancoDigital.View;
@@ -8,8 +9,7 @@ namespace AppBancoDigital
     public partial class App : Application
     {
         public static Model.Correntista DadosCorrentista { get; set; }
-        public static Model.Conta ContaCorrente { get; set; }
-        public static Model.Conta ContaPoupanca { get; set; }
+        public static List<Model.Conta> ListaContas { get; set; }
 
         public App()
         {
