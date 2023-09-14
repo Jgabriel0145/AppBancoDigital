@@ -11,9 +11,13 @@ namespace AppBancoDigital.Service
 {
     public class DataServiceChavePix : DataService
     {
-        public static async Task<ChavePix> CadastrarCHavePix(ChavePix chave)
+        public static async Task<ChavePix> CadastrarChavePix(ChavePix chave)
         {
             var json_para_enviar = JsonConvert.SerializeObject(chave);
+
+            Console.WriteLine("---------------CHAVE PIX--------------");
+            Console.WriteLine(json_para_enviar);
+            Console.WriteLine("---------------CHAVE PIX--------------");
 
             string json = await PostDataToService(json_para_enviar, "/chavepix/salvar");
 

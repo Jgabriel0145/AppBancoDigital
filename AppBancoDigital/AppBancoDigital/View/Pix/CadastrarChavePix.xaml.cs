@@ -69,22 +69,37 @@ namespace AppBancoDigital.View.Pix
                 string tipo = DefinirTipoPix();
                 string chave = DefinirChavePix(tipo);
 
-                if (RadCorrente.IsChecked == true)
+                if (tipo != "" && chave != "")
                 {
-                    pix.chave = chave;
-                    pix.tipo = tipo;
-                    pix.id_conta = conta_corrente.id;
-                }
-                else
-                {
-                    if (RadPoupanca.IsChecked == true)
+                    if (RadCorrente.IsChecked == true)
                     {
                         pix.chave = chave;
                         pix.tipo = tipo;
-                        pix.id_conta = conta_poupanca.id;
+                        pix.id_conta = conta_corrente.id;
+
+                        //await DisplayAlert("", $"", "OK");
+
+                        App.DadosPixCorrente = await DataServiceChavePix.CadastrarChavePix(pix);
+
+                        if (App.DadosPixCorrente.id != null)
+                            await DisplayAlert("Sucesso!", "Pix cadastrado com sucesso!", "OK");
                     }
-                }           
-                
+                    else
+                    {
+                        if (RadPoupanca.IsChecked == true)
+                        {
+                            pix.chave = chave;
+                            pix.tipo = tipo;
+                            pix.id_conta = conta_poupanca.id;
+
+                            App.DadosPixPoupanca = await DataServiceChavePix.CadastrarChavePix(pix);
+
+                            if (App.DadosPixPoupanca.id != null)
+                                await DisplayAlert("Sucesso!", "Pix cadastrado com sucesso!", "OK");
+                        }
+                    }
+                }
+                else await DisplayAlert("Erro!", "Preencha todos os dados.", "OK");
 
             }
             catch (Exception ex)

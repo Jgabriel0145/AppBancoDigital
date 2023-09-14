@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppBancoDigital.View;
+using AppBancoDigital.Model;
 
 namespace AppBancoDigital
 {
@@ -10,6 +11,8 @@ namespace AppBancoDigital
     {
         public static Model.Correntista DadosCorrentista { get; set; }
         public static List<Model.Conta> ListaContas { get; set; }
+        public static ChavePix DadosPixCorrente { get; set; }
+        public static ChavePix DadosPixPoupanca { get; set; }
 
         public App()
         {
