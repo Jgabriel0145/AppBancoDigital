@@ -30,11 +30,16 @@ namespace AppBancoDigital.View
 
             foreach (Conta contas in App.ListaContas)
             {
-                Console.WriteLine("_____________________________");
-                Console.WriteLine(contas.data_cadastro);
-                Console.WriteLine("_____________________________");
+                //Alterando para mostrar na interface.
+                if (contas.tipo == "C") contas.tipo = "Corrente";
+                else contas.tipo = "Poupança";
+
 
                 lista_contas.Add(contas);
+
+                //Desfazendo alterações.
+                if (contas.tipo == "Corrente") contas.tipo = "C";
+                else contas.tipo = "P";
 
                 //lbl_corrente_teste.Text = contas.ToString();
             }
@@ -50,6 +55,11 @@ namespace AppBancoDigital.View
         }
 
         private void OnAppering()
+        {
+
+        }
+
+        private void BtnLogout_Clicked(object sender, EventArgs e)
         {
 
         }

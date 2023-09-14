@@ -10,47 +10,55 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid BackgroundColor="#FC7C04" ColumnDefinitions="*, *" RowDefinitions="Auto">
-                <Label x:Name="lbl_correntista" FontSize="25" TextColor="#FFFFFF"
-                    HorizontalTextAlignment="Start" Padding="10" Grid.Row="0" Grid.Column="0"/>
-                <Label x:Name="lbl_saldo_conta" FontSize="25" TextColor="#FFFFFF" Grid.Column="1"
-                       Grid.Row="0" Text="R$ 0,00" HorizontalTextAlignment="End" Padding="10"/>
-            </Grid>
+            <Grid ColumnDefinitions="Auto" RowDefinitions="Auto, Auto, Auto, *">
 
-            <Grid RowDefinitions="125, 30, *" ColumnDefinitions="*,*,*">
-                <ImageButton VerticalOptions="Center" x:Name="BtnPix" Grid.Column="0" 
-                             Grid.Row="0" BackgroundColor="White" Margin="17"
-                             BorderWidth="1" BorderColor="Black" CornerRadius="50"
-                             Clicked="BtnPix_Clicked" Padding="5"/>
-                <Label Text="Pix" TextColor="Black" Grid.Row="1" Grid.Column="0"
-                       HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
-            </Grid>
+                <Grid BackgroundColor="#FC7C04" ColumnDefinitions="*, *" RowDefinitions="Auto"
+                      Grid.Row="0" Grid.Column="0">
+                    <Label x:Name="lbl_correntista" FontSize="25" TextColor="#FFFFFF"
+                        HorizontalTextAlignment="Start" Padding="10" Grid.Row="0" Grid.Column="0"
+                        VerticalTextAlignment="Center"/>
+                    <Button Text="Logout" TextColor="#FFFFFF" HorizontalOptions="End" 
+                        BorderColor="White" VerticalOptions="Center"
+                        CornerRadius="15" Margin="4"
+                        BorderWidth="1" BackgroundColor="Transparent"
+                        Grid.Column="1" Grid.Row="0"
+                        x:Name="BtnLogout" Clicked="BtnLogout_Clicked"/>
+                </Grid>
 
-            <StackLayout Margin="10">
-                <Label Text="Contas" TextColor="Black" FontSize="20"/>
-                <ListView x:Name="lst_contas">
-                    <ListView.Header>
-                        <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto">
-                            <Label TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Tipo" />
-                            <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="Numero" />
-                            <Label TextColor="Black" Grid.Row="0" Grid.Column="2" Text="Limite" />
-                        </Grid>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto" Padding="2">
-                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="0" Text="{Binding tipo}" />
-                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="{Binding id}" />
-                                    <Label TextColor="Black" Grid.Row="0" Grid.Column="2" Text="{Binding limite}" />
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>                        
-                    </ListView.ItemTemplate>
-                </ListView>
-                
-                
-            </StackLayout>
+                <Grid RowDefinitions="125, 30, *" ColumnDefinitions="*,*,*" Grid.Row="1" Grid.Column="0">
+                    <ImageButton VerticalOptions="Center" x:Name="BtnPix" Grid.Column="0" 
+                        Grid.Row="0" BackgroundColor="White" Margin="17"
+                        BorderWidth="1" BorderColor="Black" CornerRadius="50"
+                        Clicked="BtnPix_Clicked" Padding="5"/>
+
+                    <Label Text="Pix" TextColor="Black" Grid.Row="1" Grid.Column="0"
+                        HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
+                </Grid>
+
+                <StackLayout Margin="10" Grid.Row="2" Grid.Column="0">
+                    <Label Text="Contas" TextColor="Black" FontSize="20"/>
+                    <ListView x:Name="lst_contas">
+                        <ListView.Header>
+                            <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto">
+                                <Label TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Tipo" />
+                                <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="Número" />
+                                <Label TextColor="Black" Grid.Row="0" Grid.Column="2" Text="Saldo(R$)" />
+                            </Grid>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto" Padding="2">
+                                        <Label TextColor="Black" Grid.Row="0" Grid.Column="0" Text="{Binding tipo}" />
+                                        <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="{Binding id}" />
+                                        <Label TextColor="Black" Grid.Row="0" Grid.Column="2" Text="{Binding saldo}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
