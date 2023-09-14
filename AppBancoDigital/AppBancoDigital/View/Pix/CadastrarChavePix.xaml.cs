@@ -16,9 +16,36 @@ namespace AppBancoDigital.View.Pix
     public partial class CadastrarChavePix : ContentPage
     {
         ChavePix pix = new ChavePix();
+        Conta conta_corrente = new Conta();
+        Conta conta_poupanca = new Conta();
+        Model.Correntista correntista = App.DadosCorrentista;
+        
         public CadastrarChavePix()
         {
             InitializeComponent();
+        }
+
+        string DefinirTipoPix()
+        {
+            if (RadCpf.IsChecked == true)
+                return "cpf";
+            else
+            {
+                if (RadEmail.IsChecked == true)
+                    return "email";
+                else
+                    return "";
+            }
+        }
+
+        string DefinirChavePix(string tipo)
+        {
+            if (tipo == "email")
+                return correntista.email;
+            else
+                if (tipo == "cpf")
+                return correntista.cpf;
+            else return "";
         }
 
         private async void BtnCadastrar_Clicked(object sender, EventArgs e)
@@ -27,14 +54,38 @@ namespace AppBancoDigital.View.Pix
             act_carregando.IsVisible = true;
             try
             {
-                if (RadCpf.IsChecked == true) pix.tipo = "cpf";
-                else
+                foreach (Conta contas in App.ListaContas)
                 {
-                    if (RadEmail.IsChecked == true) pix.tipo = "email";
-                    else if (RadTelefone.IsChecked == true) pix.tipo = "telefone";
+                    if (contas.tipo == "C")
+                    {
+                        conta_corrente = contas;
+                    }
+                    else
+                    {
+                        conta_poupanca = contas;
+                    }
                 }
 
-                await DisplayAlert("", pix.tipo, "OK");
+                string tipo = DefinirTipoPix();
+                string chave = DefinirChavePix(tipo);
+
+                if (RadCorrente.IsChecked == true)
+                {
+                    pix.chave = chave;
+                    pix.tipo = tipo;
+                    pix.id_conta = conta_corrente.id;
+                }
+                else
+                {
+                    if (RadPoupanca.IsChecked == true)
+                    {
+                        pix.chave = chave;
+                        pix.tipo = tipo;
+                        pix.id_conta = conta_poupanca.id;
+                    }
+                }           
+                
+
             }
             catch (Exception ex)
             {

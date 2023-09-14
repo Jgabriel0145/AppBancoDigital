@@ -16,7 +16,7 @@
                             <Label Text="Defina sua chave pix:" TextColor="#000000" FontSize="22" FontAttributes="Bold"/>
                             <RadioButton Content="CPF" GroupName="DefinirChavePix" x:Name="RadCpf" TextColor="#000000"/>
                             <RadioButton Content="Email" GroupName="DefinirChavePix" x:Name="RadEmail" TextColor="#000000"/>
-                            <RadioButton Content="Telefone" GroupName="DefinirChavePix" x:Name="RadTelefone" TextColor="#000000"/>
+                            <!--<RadioButton Content="Telefone" GroupName="DefinirChavePix" x:Name="RadTelefone" TextColor="#000000"/>-->
                         </StackLayout>
 
                         <StackLayout Margin="10" BackgroundColor="Transparent">

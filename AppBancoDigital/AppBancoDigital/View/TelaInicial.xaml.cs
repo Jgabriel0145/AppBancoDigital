@@ -39,7 +39,7 @@ namespace AppBancoDigital.View
                 //lbl_corrente_teste.Text = contas.ToString();
             }
             
-            //BtnPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
+           BtnPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
         }
 
         
