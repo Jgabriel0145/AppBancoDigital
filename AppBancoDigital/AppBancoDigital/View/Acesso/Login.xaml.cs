@@ -36,8 +36,6 @@ namespace AppBancoDigital.View.Acesso
 
                 if (App.DadosCorrentista.id != null)
                 {
-                    //Model.Conta conta_corrente = await DataServiceConta.ProcurarContaCorrente(correntista);
-                    //Model.Conta conta_poupanca = await DataServiceConta.ProcurarContaPoupanca(correntista);
                     App.ListaContas = await DataServiceConta.ProcurarContas(App.DadosCorrentista);
 
 
@@ -47,14 +45,6 @@ namespace AppBancoDigital.View.Acesso
                         Console.WriteLine(contas.id);
                         Console.WriteLine("_____________________________");
                     }
-
-
-                    //Console.WriteLine("-------LISTA CONTAS----------------------");
-                    //Console.WriteLine(lista_contas);
-                    //Console.WriteLine("-----------------------------------------");
-
-                    //App.ContaCorrente = conta_corrente;
-                    //App.ContaPoupanca = conta_poupanca;
 
                     App.Current.MainPage = new NavigationPage(new View.TelaInicial());
                 }

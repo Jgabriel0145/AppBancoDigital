@@ -61,7 +61,12 @@ namespace AppBancoDigital.View
 
         private void BtnLogout_Clicked(object sender, EventArgs e)
         {
+            App.DadosCorrentista = null;
+            App.ListaContas = null;
+            App.DadosPixCorrente = null;
+            App.DadosPixPoupanca = null;
 
+            App.Current.MainPage = new NavigationPage(new View.Acesso.Login());
         }
     }
 }
