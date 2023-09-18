@@ -46,7 +46,7 @@ namespace AppBancoDigital.View
             
             BtnPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
             BtnEnviarPix.Source = ImageSource.FromResource("AppBancoDigital.Img.enviar_pix.png");
-            BtnReceberPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
+            BtnReceberPix.Source = ImageSource.FromResource("AppBancoDigital.Img.receber_pix.png");
         }
 
         
