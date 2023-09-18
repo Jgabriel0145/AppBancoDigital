@@ -44,7 +44,9 @@ namespace AppBancoDigital.View
                 //lbl_corrente_teste.Text = contas.ToString();
             }
             
-           BtnPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
+            BtnPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
+            BtnEnviarPix.Source = ImageSource.FromResource("AppBancoDigital.Img.enviar_pix.png");
+            BtnReceberPix.Source = ImageSource.FromResource("AppBancoDigital.Img.pix_icone.png");
         }
 
         
@@ -67,6 +69,16 @@ namespace AppBancoDigital.View
             App.DadosPixPoupanca = null;
 
             App.Current.MainPage = new NavigationPage(new View.Acesso.Login());
+        }
+
+        private void BtnEnviarPix_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnReceberPix_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

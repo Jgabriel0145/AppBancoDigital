@@ -28,10 +28,26 @@
                 <Grid RowDefinitions="125, 30, *" ColumnDefinitions="*,*,*" Grid.Row="1" Grid.Column="0">
                     <ImageButton VerticalOptions="Center" x:Name="BtnPix" Grid.Column="0" 
                         Grid.Row="0" BackgroundColor="White" Margin="17"
-                        BorderWidth="1" BorderColor="Black" CornerRadius="50"
+                        BorderWidth="1" BorderColor="Black" CornerRadius="10"
                         Clicked="BtnPix_Clicked" Padding="5"/>
 
-                    <Label Text="Pix" TextColor="Black" Grid.Row="1" Grid.Column="0"
+                    <Label Text="Nova Chave" TextColor="Black" Grid.Row="1" Grid.Column="0"
+                        HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
+
+                    <ImageButton VerticalOptions="Center" x:Name="BtnEnviarPix" Grid.Column="1" 
+                        Grid.Row="0" BackgroundColor="White" Margin="17"
+                        BorderWidth="1" BorderColor="Black" CornerRadius="10"
+                        Padding="5" Clicked="BtnEnviarPix_Clicked"/>
+
+                    <Label Text="Enviar Pix" TextColor="Black" Grid.Row="1" Grid.Column="1"
+                        HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
+
+                    <ImageButton VerticalOptions="Center" x:Name="BtnReceberPix" Grid.Column="2" 
+                        Grid.Row="0" BackgroundColor="White" Margin="17"
+                        BorderWidth="1" BorderColor="Black" CornerRadius="10"
+                        Padding="5" Clicked="BtnReceberPix_Clicked"/>
+
+                    <Label Text="Receber Pix" TextColor="Black" Grid.Row="1" Grid.Column="2"
                         HorizontalTextAlignment="Center" FontSize="20" Margin="0"/>
                 </Grid>
 
