@@ -14,6 +14,7 @@
     <None Remove="Img\enviar_pix.png" />
     <None Remove="Img\logo.png" />
     <None Remove="Img\logo_edit.png" />
+    <None Remove="Img\logo_pix.png" />
     <None Remove="Img\pix_icone.png" />
     <None Remove="Img\receber_pix.png" />
   </ItemGroup>
@@ -26,6 +27,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Img\logo_edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Img\logo_pix.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Img\pix_icone.png">
