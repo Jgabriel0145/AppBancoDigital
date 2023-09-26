@@ -73,12 +73,12 @@ namespace AppBancoDigital.View
 
         private void BtnEnviarPix_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Pix.EnviarPix());
         }
 
         private void BtnReceberPix_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Pix.ReceberPix());
         }
     }
 }

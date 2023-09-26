@@ -96,6 +96,8 @@ namespace AppBancoDigital.View.Pix
 
                             if (App.DadosPixPoupanca.id != null)
                                 await DisplayAlert("Sucesso!", "Pix cadastrado com sucesso!", "OK");
+
+                            await Navigation.PopAsync();
                         }
                     }
                 }

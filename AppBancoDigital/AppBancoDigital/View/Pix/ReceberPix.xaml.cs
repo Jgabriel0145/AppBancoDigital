@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppBancoDigital.View
+namespace AppBancoDigital.View.Pix
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NovoPopUp : ContentPage
+    public partial class ReceberPix : ContentPage
     {
-        public NovoPopUp()
+        public ReceberPix()
         {
             InitializeComponent();
         }
