@@ -20,6 +20,8 @@
                     <Entry x:Name="txt_cpf_login" Placeholder="XXXXXXXXXXX" PlaceholderColor="#FFFFFF"
                            ClearButtonVisibility="WhileEditing" TextColor="#FFFFFF" Keyboard="Numeric"
                            MaxLength="11"/>
+                    
+                    
 
                     <Label Text="Senha:" Style="{StaticResource lbl_Login_Cadastro}"/>
                     <Entry x:Name="txt_senha_login" Placeholder="********" PlaceholderColor="#FFFFFF"

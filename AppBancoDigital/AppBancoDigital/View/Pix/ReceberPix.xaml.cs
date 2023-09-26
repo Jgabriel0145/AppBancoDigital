@@ -16,5 +16,10 @@ namespace AppBancoDigital.View.Pix
         {
             InitializeComponent();
         }
+
+        private void BtnLerQRCode_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pix.LerQrCode());
+        }
     }
 }
