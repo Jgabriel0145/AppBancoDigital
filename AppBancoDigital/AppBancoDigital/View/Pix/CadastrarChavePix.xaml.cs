@@ -97,10 +97,10 @@ namespace AppBancoDigital.View.Pix
                             if (App.DadosPixPoupanca.id != null)
                                 await DisplayAlert("Sucesso!", "Pix cadastrado com sucesso!", "OK");
 
-                            await Navigation.PopAsync();
                         }
                     }
                 }
+
                 else await DisplayAlert("Erro!", "Preencha todos os dados.", "OK");
 
             }
@@ -112,6 +112,8 @@ namespace AppBancoDigital.View.Pix
             {
                 act_carregando.IsVisible = false;
                 act_carregando.IsRunning = false;
+
+                await Navigation.PopAsync();
             }
         }
     }
